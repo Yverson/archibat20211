@@ -2,7 +2,6 @@
 import 'package:archibat2021/customPaint/clock/ClockCustomPaintScreen.dart';
 import 'package:archibat2021/main/model/AppModel.dart';
 import 'package:archibat2021/main/utils/AppConstant.dart';
-import 'package:archibat2021/fullApps/shopHop/screens/ShSplashScreen.dart';
 import 'package:archibat2021/widgets/animationAndMotionWidgets/AMAnimatedBuilderScreen.dart';
 import 'package:archibat2021/widgets/animationAndMotionWidgets/AMAnimatedContainerScreen.dart';
 import 'package:archibat2021/widgets/animationAndMotionWidgets/AMAnimatedCrossFadeScreen.dart';
@@ -135,7 +134,7 @@ List<ProTheme> getCustomPaints() {
 ProTheme getFullApps() {
   ProTheme theme = ProTheme(name: "Full App", type: 'New', show_cover: true, sub_kits: []);
   List<ProTheme> list = [];
-  list.add(ProTheme(name: 'Shop hop', type: '', widget: ShSplashScreen()));
+  //list.add(ProTheme(name: 'Shop hop', type: '', widget: ShSplashScreen()));
 
   theme.sub_kits!.addAll(list);
   return theme;

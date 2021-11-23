@@ -123,20 +123,20 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
                   child: Column(
                     children: <Widget>[
                       SizedBox(height: 20),
-                      Text(
-                          "ARCHIBAT 2021, le plus grand salon du bâtiment et de l’architecture en Afrique de l’Ouest",
-                          textAlign: TextAlign.center,
-                          style: primaryTextStyle(
-                              color: Colors.black,
-                              size: 14,
-                              fontFamily: 'Bold')),
-                      SizedBox(height: 8),
-                      Text("08 AU 11 DECEMBRE 2021",
-                          textAlign: TextAlign.center,
-                          style: primaryTextStyle(
-                              color: Colors.black,
-                              size: 20,
-                              fontFamily: 'Bold')),
+                      // Text(
+                      //     "ARCHIBAT 2021, le plus grand salon du bâtiment et de l’architecture en Afrique de l’Ouest",
+                      //     textAlign: TextAlign.center,
+                      //     style: primaryTextStyle(
+                      //         color: Colors.black,
+                      //         size: 14,
+                      //         fontFamily: 'Bold')),
+                      // SizedBox(height: 8),
+                      // Text("08 AU 11 DECEMBRE 2021",
+                      //     textAlign: TextAlign.center,
+                      //     style: primaryTextStyle(
+                      //         color: Colors.black,
+                      //         size: 20,
+                      //         fontFamily: 'Bold')),
                       SizedBox(height: 15),
                       Container(
                         width: width,

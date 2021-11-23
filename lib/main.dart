@@ -8,7 +8,6 @@ import 'package:archibat2021/main/utils/AppTheme.dart';
 import 'package:archibat2021/routes.dart';
 
 import 'fullApps/hairSalon/screens/BHSplashScreen.dart';
-import 'fullApps/shopHop/screens/ShSplashScreen.dart';
 import 'main/utils/AppConstant.dart';
 //endregion
 
