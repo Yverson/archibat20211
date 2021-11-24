@@ -106,12 +106,12 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
               children: <Widget>[
                 ClipRRect(
                   borderRadius: BorderRadius.circular(0.0),
-                  child: Image.asset("images/archibat/archibat.png",
+                  child: Image.network("http://cgeciapi.gaddielsoftware.com/archibat.png",
                       fit: BoxFit.cover),
                 ),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(0.0),
-                  child: Image.asset("images/archibat/Fichier_1number.png",
+                  child: Image.network("http://cgeciapi.gaddielsoftware.com/Fichier_1number.png",
                       fit: BoxFit.cover),
                 ),
                 Container(
@@ -162,12 +162,13 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
                                       borderRadius:
                                       BorderRadius.circular(20), //or 15.0
                                       child: Container(
+                                        padding: EdgeInsets.all(10.0),
                                         height: width * 0.1875,
                                         width: width * 0.1875,
                                         color: Colors.orangeAccent,
                                         child: Image.asset(
                                             "images/archibat/Asset_6@4x.png",
-                                            width: width / 5.3),
+                                            width: width / 7.3),
                                       ),
                                     ),
                                     SizedBox(height: 5),
@@ -193,6 +194,7 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
                                       borderRadius:
                                       BorderRadius.circular(20), //or 15.0
                                       child: Container(
+                                        padding: EdgeInsets.all(10.0),
                                         height: width * 0.1875,
                                         width: width * 0.1875,
                                         color: Colors.orangeAccent,
@@ -224,6 +226,7 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
                                       borderRadius:
                                       BorderRadius.circular(20), //or 15.0
                                       child: Container(
+                                        padding: EdgeInsets.all(10.0),
                                         height: width * 0.1875,
                                         width: width * 0.1875,
                                         color: Colors.orangeAccent,
@@ -400,23 +403,23 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
                             ),
                           ]),
                       SizedBox(height: 25),
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.orangeAccent,
-                          onPrimary: Colors.white,
-                          shadowColor: Colors.orangeAccent,
-                          elevation: 3,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(32.0)),
-                          minimumSize: Size(200, 60), //////// HERE
-                        ),
-                        onPressed: () {
-                          ARCHIINVITATIONScreen().launch(context);
-                        },
-                        child: Text(
-                            "RECEVOIR VOTRE INVITATION", style: TextStyle(
-                            fontSize: 20)),
-                      ),
+                      // ElevatedButton(
+                      //   style: ElevatedButton.styleFrom(
+                      //     primary: Colors.orangeAccent,
+                      //     onPrimary: Colors.white,
+                      //     shadowColor: Colors.orangeAccent,
+                      //     elevation: 3,
+                      //     shape: RoundedRectangleBorder(
+                      //         borderRadius: BorderRadius.circular(32.0)),
+                      //     minimumSize: Size(200, 60), //////// HERE
+                      //   ),
+                      //   onPressed: () {
+                      //     ARCHIINVITATIONScreen().launch(context);
+                      //   },
+                      //   child: Text(
+                      //       "RECEVOIR VOTRE INVITATION", style: TextStyle(
+                      //       fontSize: 20)),
+                      // ),
                       SizedBox(height: 25),
                     ],
                   ),

@@ -6,6 +6,7 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:archibat2021/main/store/AppStore.dart';
 import 'package:archibat2021/main/utils/AppTheme.dart';
 import 'package:archibat2021/routes.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 import 'fullApps/hairSalon/screens/BHSplashScreen.dart';
 import 'main/utils/AppConstant.dart';
@@ -40,6 +41,24 @@ void main() async {
 
     //FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
   }
+
+  //Remove this method to stop OneSignal Debugging
+  //OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
+
+  OneSignal.shared.setAppId("da9fc093-50d0-42d9-a1c5-9321e06806d3");
+
+// The promptForPushNotificationsWithUserResponse function will show the iOS push notification prompt. We recommend removing the following code and instead using an In-App Message to prompt for notification permission
+  OneSignal.shared.promptUserForPushNotificationPermission().then((accepted) {
+    print("Accepted permission: $accepted");
+  });
+
+
+  OneSignal.shared.setNotificationWillShowInForegroundHandler((OSNotificationReceivedEvent event) {
+    // Will be called whenever a notification is received in foreground
+    // Display Notification, pass null param for not displaying the notification
+    //print(event.notification);
+    event.complete(event.notification);
+  });
 
   runApp(MyApp());
   //endregion

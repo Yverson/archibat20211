@@ -66,7 +66,7 @@ class ARCHIAGENDAScreenState extends State<ARCHIAGENDAScreen> {
     mListings32.clear();
 
     final response = await http.get(Uri.parse(
-        'http://cgeciapi.gaddielsoftware.com/api/programmes'));
+        'http://cgeciapi.gaddielsoftware.com/api/programmesA'));
     if (response.statusCode == 200) {
       var responseData = json.decode(response.body);
       //Creating a list to store input data;
@@ -74,28 +74,16 @@ class ARCHIAGENDAScreenState extends State<ARCHIAGENDAScreen> {
       for (var singleUser in responseData) {
         T1Model? r = T1Model.fromMap(singleUser);
 
-        if (r.type == "CEO" && r.id == "28 octobre 2021") {
+        if (r.type == "YCEO") {
           mListings11.add(r);
         }
 
-        if (r.type == "CEO" && r.id == "29 octobre 2021") {
-          mListings12.add(r);
-        }
-
-        if (r.type == "PME" && r.id == "28 octobre 2021") {
+        if (r.type == "CEO") {
           mListings21.add(r);
         }
 
-        if (r.type == "PME" && r.id == "29 octobre 2021") {
-          mListings22.add(r);
-        }
-
-        if (r.type == "YCEO" && r.id == "28 octobre 2021") {
+        if (r.type == "PME") {
           mListings31.add(r);
-        }
-
-        if (r.type == "YCEO" && r.id == "29 octobre 2021") {
-          mListings32.add(r);
         }
 
         //Adding user to the list.
@@ -127,48 +115,7 @@ class ARCHIAGENDAScreenState extends State<ARCHIAGENDAScreen> {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "28 Octobre 2021",
-            style: boldTextStyle(),
-          ).paddingLeft(16),
-          16.height,
-          ListView.builder(
-            scrollDirection: Axis.vertical,
-            physics: ScrollPhysics(),
-            itemCount: mListings11.length,
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              return T1ListItem(mListings11[index], index);
-            },
-          ),
-          16.height,
-          Text(
-            "29 Octobre 2021",
-            style: boldTextStyle(),
-          ).paddingLeft(16),
-          16.height,
-          ListView.builder(
-            scrollDirection: Axis.vertical,
-            physics: ScrollPhysics(),
-            itemCount: mListings12.length,
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              return T1ListItem(mListings12[index], index);
-            },
-          ),
-        ],
-      );
-    }
-
-    Widget mPageYCEO(var value) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "28 Octobre 2021",
-            style: boldTextStyle(),
-          ).paddingLeft(16),
-          16.height,
+          6.height,
           ListView.builder(
             scrollDirection: Axis.vertical,
             physics: ScrollPhysics(),
@@ -179,20 +126,25 @@ class ARCHIAGENDAScreenState extends State<ARCHIAGENDAScreen> {
             },
           ),
           16.height,
-          Text(
-            "29 Octobre 2021",
-            style: boldTextStyle(),
-          ).paddingLeft(16),
-          16.height,
+        ],
+      );
+    }
+
+    Widget mPageYCEO(var value) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          6.height,
           ListView.builder(
             scrollDirection: Axis.vertical,
             physics: ScrollPhysics(),
-            itemCount: mListings22.length,
+            itemCount: mListings11.length,
             shrinkWrap: true,
             itemBuilder: (context, index) {
-              return T1ListItem(mListings22[index], index);
+              return T1ListItem(mListings11[index], index);
             },
           ),
+          16.height,
         ],
       );
     }
@@ -201,11 +153,7 @@ class ARCHIAGENDAScreenState extends State<ARCHIAGENDAScreen> {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "28 Octobre 2021",
-            style: boldTextStyle(),
-          ).paddingLeft(16),
-          16.height,
+          6.height,
           ListView.builder(
             scrollDirection: Axis.vertical,
             physics: ScrollPhysics(),
@@ -216,20 +164,6 @@ class ARCHIAGENDAScreenState extends State<ARCHIAGENDAScreen> {
             },
           ),
           16.height,
-          Text(
-            "29 Octobre 2021",
-            style: boldTextStyle(),
-          ).paddingLeft(16),
-          16.height,
-          ListView.builder(
-            scrollDirection: Axis.vertical,
-            physics: ScrollPhysics(),
-            itemCount: mListings32.length,
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              return T1ListItem(mListings32[index], index);
-            },
-          ),
         ],
       );
     }
@@ -270,13 +204,21 @@ class ARCHIAGENDAScreenState extends State<ARCHIAGENDAScreen> {
                               0: Container(
                                   padding: EdgeInsets.all(10),
                                   child: Text(
-                                    'Conferences',
+                                    'General',
                                     style: primaryTextStyle(
                                         color: _sliding == 0
                                             ? Colors.blueAccent
                                             : Colors.blue),
                                   )),
                               1: Container(
+                                  padding: EdgeInsets.all(10),
+                                  child: Text('Conferences',
+                                      style: primaryTextStyle(
+                                          color: _sliding == 1
+                                              ? Colors.blueAccent
+                                              : Colors.blue))),
+
+                              2: Container(
                                   padding: EdgeInsets.all(10),
                                   child: Text('B to B',
                                       style: primaryTextStyle(
@@ -291,8 +233,8 @@ class ARCHIAGENDAScreenState extends State<ARCHIAGENDAScreen> {
                               });
                             }),
                       ),
-                      if (_sliding == 0) mPageCEO("CEO"),
-                      if (_sliding == 1) mPageYCEO("YCEO"),
+                      if (_sliding == 0) mPageYCEO("YCEO"),
+                      if (_sliding == 1) mPageCEO("CEO"),
                       if (_sliding == 2) mPagePME("PME"),
                     ],
                   );

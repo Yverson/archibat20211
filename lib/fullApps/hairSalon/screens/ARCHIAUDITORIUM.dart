@@ -57,6 +57,17 @@ class ARCHIAUDITORIUMScreenState extends State<ARCHIAUDITORIUMScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    var width = MediaQuery
+        .of(context)
+        .size
+        .width;
+    var height = MediaQuery
+        .of(context)
+        .size
+        .height;
+
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -139,7 +150,7 @@ class ARCHIAUDITORIUMScreenState extends State<ARCHIAUDITORIUMScreen> {
                                 (BuildContext ctx, AsyncSnapshot snapshot) {
                               if (snapshot.data != null) {
                                 return Container(
-                                  height: 600,
+                                  height: height - 250,
                                   child: ListView.builder(
                                     padding: EdgeInsets.symmetric(vertical: 8),
                                     itemCount: filteredData.length,

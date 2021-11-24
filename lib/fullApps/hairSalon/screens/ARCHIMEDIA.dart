@@ -8,6 +8,8 @@ import 'package:http/http.dart' as http;
 import 'package:nb_utils/nb_utils.dart';
 import 'package:archibat2021/fullApps/hairSalon/model/ProductModel.dart';
 
+import 'ARCHIMEDIADETAIL.dart';
+
 class ARCHIMEDIAScreen extends StatefulWidget {
   static String tag = '/DiscoverBottomNavigationBarScreen';
 
@@ -85,23 +87,29 @@ class ARCHIMEDIAScreenState extends State<ARCHIMEDIAScreen> {
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2),
                     itemBuilder: (context, index) {
-                      return Padding(
-                          padding: EdgeInsets.all(10),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Image.asset('images/archibat/${snapshot.data![index].img}',
-                                  height: 153,
-                                  fit: BoxFit.fill),
-                              SizedBox(height: 3),
-                              Text(snapshot.data![index].name!,
-                                  textAlign: TextAlign.center,
-                                  style: primaryTextStyle(
-                                      color: Colors.black,
-                                      size: 16,
-                                      fontFamily: 'Medium')),
-                            ],
-                          )
+                      return GestureDetector(
+                        onTap: (){
+
+                          ARCHIMEDIADETAILScreen(model: snapshot.data![index]).launch(context);
+                        },
+                        child: Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Image.asset('images/archibat/${snapshot.data![index].img}',
+                                    height: 153,
+                                    fit: BoxFit.fill),
+                                SizedBox(height: 3),
+                                Text(snapshot.data![index].name!,
+                                    textAlign: TextAlign.center,
+                                    style: primaryTextStyle(
+                                        color: Colors.black,
+                                        size: 16,
+                                        fontFamily: 'Medium')),
+                              ],
+                            )
+                        ),
                       );
                     });
               }

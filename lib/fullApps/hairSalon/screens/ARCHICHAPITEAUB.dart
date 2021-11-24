@@ -56,6 +56,17 @@ class ARCHICHAPITEAUBScreenState extends State<ARCHICHAPITEAUBScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    var width = MediaQuery
+        .of(context)
+        .size
+        .width;
+    var height = MediaQuery
+        .of(context)
+        .size
+        .height;
+
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -135,31 +146,15 @@ class ARCHICHAPITEAUBScreenState extends State<ARCHICHAPITEAUBScreen> {
                         Container(
                           width: MediaQuery.of(context).size.width,
                           padding: const EdgeInsets.all(16.0),
-                          child: CupertinoSlidingSegmentedControl(
-                              children: {
-                                0: Container(
-                                    padding: EdgeInsets.all(10),
-                                    child: Text(
-                                      'FINIR',
-                                      style: primaryTextStyle(
-                                          color: _sliding == 0
-                                              ? Colors.orangeAccent
-                                              : Colors.orange),
-                                    )),
-                                1: Container(
-                                    padding: EdgeInsets.all(10),
-                                    child: Text('AMENAGER',
-                                        style: primaryTextStyle(
-                                            color: _sliding == 1
-                                                ? Colors.greenAccent
-                                                : Colors.green))),
-                              },
-                              groupValue: _sliding,
-                              onValueChanged: (dynamic newValue) {
-                                setState(() {
-                                  _sliding = newValue;
-                                });
-                              }),
+                          child: Container(
+                              padding: EdgeInsets.all(10),
+                              child: Text(
+                                'FINIR - AMENAGER',
+                                style: primaryTextStyle(
+                                    color: _sliding == 0
+                                        ? Colors.orangeAccent
+                                        : Colors.orange),
+                              )),
                         ),
                         FutureBuilder(
                             future: data,
@@ -167,7 +162,7 @@ class ARCHICHAPITEAUBScreenState extends State<ARCHICHAPITEAUBScreen> {
                                 (BuildContext ctx, AsyncSnapshot snapshot) {
                               if (snapshot.data != null) {
                                 return Container(
-                                  height: 600,
+                                  height: height - 250,
                                   child: ListView.builder(
                                     padding: EdgeInsets.symmetric(vertical: 8),
                                     itemCount: filteredData.length,
