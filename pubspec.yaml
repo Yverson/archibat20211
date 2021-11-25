@@ -123,6 +123,7 @@ flutter:
     - images/cgeci/svg/
     - images/cgeci/exposants/
     - images/cgeci/info/
+    - images/LikeButton/
     - assets/integrations/lang/
     - assets/shophop_data/
     - images/app/icons/
