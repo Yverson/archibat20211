@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'ARCHIHOTEL.dart';
 import 'ARCHIRESTAURANT.dart';
@@ -86,7 +87,7 @@ class ARCHIINFOScreenState extends State<ARCHIINFOScreen> {
                                 ),
                               ),
                               onTap: () {
-                                print("you clicked me");
+                                openMap(5.3271008,-4.0047682);
                               }),
                           SizedBox(width: (30)),
                           GestureDetector(
@@ -122,5 +123,14 @@ class ARCHIINFOScreenState extends State<ARCHIINFOScreen> {
         ),
       ),
     );
+  }
+
+  static Future<void> openMap(double latitude, double longitude) async {
+    String googleUrl = 'https://www.google.com/maps/search/?api=1&query=$latitude,$longitude';
+    if (await canLaunch(googleUrl)) {
+      await launch(googleUrl);
+    } else {
+      throw 'Could not open the map.';
+    }
   }
 }

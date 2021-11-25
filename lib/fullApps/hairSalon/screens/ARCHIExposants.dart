@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:archibat2021/fullApps/hairSalon/utils/BHColors.dart';
 import 'package:archibat2021/main/utils/AppWidget.dart';
@@ -53,6 +54,16 @@ class ARCHIExposantsScreenState extends State<ARCHIExposantsScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    var width = MediaQuery
+        .of(context)
+        .size
+        .width;
+    var height = MediaQuery
+        .of(context)
+        .size
+        .height;
+
     return Scaffold(
       appBar: AppBar(
         brightness: Brightness.dark,
@@ -132,7 +143,7 @@ class ARCHIExposantsScreenState extends State<ARCHIExposantsScreen> {
                                 (BuildContext ctx, AsyncSnapshot snapshot) {
                               if (snapshot.data != null) {
                                 return Container(
-                                  height: 600,
+                                  height: height - 250,
                                   child: ListView.builder(
                                     padding: EdgeInsets.symmetric(vertical: 8),
                                     itemCount: filteredData.length,
@@ -159,14 +170,21 @@ class ARCHIExposantsScreenState extends State<ARCHIExposantsScreen> {
                                                   CrossAxisAlignment.start,
                                                   children: [
                                                     Padding(
-                                                        padding: EdgeInsets.only(left: 8, top: 8),
-                                                        child: Text(
-                                                          filteredData[index].name!,
-                                                          style: new TextStyle(
-                                                              color: Colors.pink[700],
-                                                              fontSize: 18.0,
-                                                              fontWeight:
-                                                              FontWeight.bold),
+                                                        padding: EdgeInsets.only(left: 0, top: 8),
+                                                        child: Wrap(
+                                                          children: <Widget>[
+                                                          Text(
+                                                            filteredData[index].name!,
+                                                            style: new TextStyle(
+                                                                color: Colors.pink[700],
+                                                                fontSize: 15.0,
+                                                                fontWeight:
+                                                                FontWeight.bold),
+                                                            softWrap: true,
+                                                            overflow: TextOverflow.ellipsis,
+                                                            maxLines: 2,
+                                                          ),
+                                                          ]
                                                         )),
                                                     Padding(
                                                         padding: EdgeInsets.only(left: 8),
@@ -174,9 +192,12 @@ class ARCHIExposantsScreenState extends State<ARCHIExposantsScreen> {
                                                             filteredData[index].info!,
                                                             style: new TextStyle(
                                                                 color: Colors.blue,
-                                                                fontSize: 18.0,
+                                                                fontSize: 15.0,
                                                                 fontWeight: FontWeight
-                                                                    .bold))),
+                                                                    .bold),
+                                                          overflow: TextOverflow.ellipsis,
+                                                        )
+                                                    ),
                                                   ]),
                                             ],
                                           ),

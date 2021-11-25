@@ -8,6 +8,8 @@ import 'package:http/http.dart' as http;
 import 'package:nb_utils/nb_utils.dart';
 import 'package:archibat2021/fullApps/hairSalon/model/ProductModel.dart';
 
+import 'ARCHIHOTELDETAIL.dart';
+
 class ARCHIHOTELScreen extends StatefulWidget {
   static String tag = '/DiscoverBottomNavigationBarScreen';
 
@@ -144,6 +146,9 @@ class StoreDeal extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
 
     return GestureDetector(
+      onTap: () {
+        ARCHIHOTELDETAILScreen(model: model).launch(context);
+      },
       child: Container(
         padding: EdgeInsets.all(10),
         child: Column(
