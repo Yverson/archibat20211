@@ -43,13 +43,11 @@ class ARCHIPLANSITEScreenState extends State<ARCHIPLANSITEScreen> {
         ),
       ),
       body: Container(
-        child: SingleChildScrollView(
-          child: Container(
+        child: Container(
               child: PhotoView(
-                imageProvider: NetworkImage("assets/large-image.jpg"),
+                imageProvider: NetworkImage("http://cgeciapi.gaddielsoftware.com/exposants/carte.jpeg"),
               ),
           ),
-        ),
       ),
     );
   }
