@@ -72,7 +72,7 @@ dev_dependencies:
   #flutter packages pub run build_runner build --delete-conflicting-outputs
 
 flutter_icons:
-  image_path: "assets/icon/app_logo.jpg"
+  image_path: "images/archibat/LOGO.png"
   android: "launcher_icon"
   ios: true
 
