@@ -403,23 +403,23 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
                             ),
                           ]),
                       SizedBox(height: 25),
-                      // ElevatedButton(
-                      //   style: ElevatedButton.styleFrom(
-                      //     primary: Colors.orangeAccent,
-                      //     onPrimary: Colors.white,
-                      //     shadowColor: Colors.orangeAccent,
-                      //     elevation: 3,
-                      //     shape: RoundedRectangleBorder(
-                      //         borderRadius: BorderRadius.circular(32.0)),
-                      //     minimumSize: Size(200, 60), //////// HERE
-                      //   ),
-                      //   onPressed: () {
-                      //     ARCHIINVITATIONScreen().launch(context);
-                      //   },
-                      //   child: Text(
-                      //       "RECEVOIR VOTRE INVITATION", style: TextStyle(
-                      //       fontSize: 20)),
-                      // ),
+                       ElevatedButton(
+                         style: ElevatedButton.styleFrom(
+                           primary: Colors.orangeAccent,
+                           onPrimary: Colors.white,
+                           shadowColor: Colors.orangeAccent,
+                           elevation: 3,
+                           shape: RoundedRectangleBorder(
+                               borderRadius: BorderRadius.circular(32.0)),
+                           minimumSize: Size(200, 60), //////// HERE
+                         ),
+                         onPressed: () {
+                           ARCHIINVITATIONScreen().launch(context);
+                         },
+                         child: Text(
+                             "RECEVOIR VOTRE INVITATION", style: TextStyle(
+                             fontSize: 20)),
+                      ),
                       SizedBox(height: 25),
                     ],
                   ),

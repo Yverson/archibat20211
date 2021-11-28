@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:photo_view/photo_view.dart';
+import 'package:photo_view/photo_view_gallery.dart';
 
 class ARCHIPLANSITEScreen extends StatefulWidget {
   static String tag = '/DiscoverBottomNavigationBarScreen';
@@ -41,7 +43,13 @@ class ARCHIPLANSITEScreenState extends State<ARCHIPLANSITEScreen> {
         ),
       ),
       body: Container(
-        child: SingleChildScrollView(),
+        child: SingleChildScrollView(
+          child: Container(
+              child: PhotoView(
+                imageProvider: NetworkImage("assets/large-image.jpg"),
+              ),
+          ),
+        ),
       ),
     );
   }
