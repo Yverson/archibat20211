@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
-import 'package:photo_view/photo_view_gallery.dart';
 
 class ARCHIPLANSITEScreen extends StatefulWidget {
   static String tag = '/DiscoverBottomNavigationBarScreen';
@@ -11,7 +10,6 @@ class ARCHIPLANSITEScreen extends StatefulWidget {
 }
 
 class ARCHIPLANSITEScreenState extends State<ARCHIPLANSITEScreen> {
-
   @override
   void initState() {
     super.initState();
@@ -33,21 +31,22 @@ class ARCHIPLANSITEScreenState extends State<ARCHIPLANSITEScreen> {
         centerTitle: true,
         flexibleSpace: Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20)),
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(20)),
               gradient: LinearGradient(
-                  colors: [Colors.lightBlueAccent,Colors.lightBlueAccent],
+                  colors: [Colors.lightBlueAccent, Colors.lightBlueAccent],
                   begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter
-              )
-          ),
+                  end: Alignment.topCenter)),
         ),
       ),
       body: Container(
         child: Container(
-              child: PhotoView(
-                imageProvider: NetworkImage("http://cgeciapi.gaddielsoftware.com/exposants/carte.jpeg"),
-              ),
+          child: PhotoView(
+            imageProvider: NetworkImage(
+                "http://cgeciapi.gaddielsoftware.com/exposants/carte.jpeg"),
           ),
+        ),
       ),
     );
   }
