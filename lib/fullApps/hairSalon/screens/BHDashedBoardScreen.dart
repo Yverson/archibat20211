@@ -10,7 +10,7 @@ import 'ARCHIAGENDA.dart';
 import 'ARCHICONTACT.dart';
 import 'ARCHIExposants.dart';
 import 'ARCHIINFO.dart';
-import 'ARCHIMEDIA.dart';
+import 'ARCHIMEDIAV1.dart';
 
 class BHDashedBoardScreen extends StatefulWidget {
   static String tag = '/DashedBoardScreen';
@@ -26,7 +26,7 @@ class BHDashedBoardScreenState extends State<BHDashedBoardScreen> {
     ARCHIAGENDAScreen(),
     ARCHIExposantsScreen(),
     ARCHIINFOScreen(),
-    ARCHIMEDIAScreen(),
+    ARCHIMEDIAV1Screen(),
     ARCHICONTACTScreen(),
   ];
 
