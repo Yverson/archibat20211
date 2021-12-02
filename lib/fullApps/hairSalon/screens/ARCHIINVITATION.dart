@@ -25,7 +25,7 @@ class ARCHIINVITATIONScreenState extends State<ARCHIINVITATIONScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: IconThemeData(color: Colors.black),
         title: Text("Recevoir votre invitation", textAlign: TextAlign.start,
           style: TextStyle(
               fontWeight: FontWeight.bold, color: Colors.orangeAccent),),
