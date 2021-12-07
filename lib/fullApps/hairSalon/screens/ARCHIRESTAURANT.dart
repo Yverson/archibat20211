@@ -60,6 +60,12 @@ class ARCHIRESTAURANTScreenState extends State<ARCHIRESTAURANTScreen> {
     item5.info = "07 87 84 20 95";
     mProductList.add(item5);
 
+    ProductModel item6 = ProductModel();
+    item6.img = "images/archibat/r7.jpg";
+    item6.name = "MUM’S";
+    item6.info = "07 07 59 56 38";
+    mProductList.add(item6);
+
     mStoreDealList = mProductList;
 
   }
