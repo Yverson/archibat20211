@@ -74,19 +74,19 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
         actions: [
           IconButton(
             icon: Image.asset('images/archibat/facebook@4x.png'),
-            onPressed: () {},
+            onPressed: () async {_launchURL("https://www.facebook.com/Archibat-578022135543253/");},
           ),
           IconButton(
             icon: Image.asset('images/archibat/insta@4x.png'),
-            onPressed: () {},
+            onPressed: () async {_launchURL("https://https://instagram.com/archibat_CIV/");},
           ),
           IconButton(
             icon: Image.asset('images/archibat/link@4x.png'),
-            onPressed: () {},
+            onPressed: () async {_launchURL("https://www.facebook.com/Archibat-578022135543253/");},
           ),
           IconButton(
             icon: Image.asset('images/archibat/tweeter@4x.png'),
-            onPressed: () {},
+            onPressed: () async {_launchURL("https://www.linkedin.com/company/archibat-civ?report%2Esuccess=6vo3TCkCS1-Q3MQSXyAa5EmbyooXt_JHF4gI-SlS5O9Glwt8CaN1ZzdSFMOjqCEC4tgoZJl1pOO90MRDlW9NQp");},
           ),
           // IconButton(
           //   icon: Icon(Icons.headset_mic, color: Colors.orangeAccent),
@@ -430,6 +430,10 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
         ),
       ]),
     );
+  }
+
+  void _launchURL(String _url) async {
+    if (!await launch(_url)) throw 'Could not launch $_url';
   }
 
   openwhatsapp() async {
