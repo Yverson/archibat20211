@@ -55,38 +55,44 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery
-        .of(context)
-        .size
-        .width;
-    var height = MediaQuery
-        .of(context)
-        .size
-        .width;
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.white),
-        title: Text("Accueil", textAlign: TextAlign.start,
+        title: Text(
+          "Accueil",
+          textAlign: TextAlign.start,
           style: TextStyle(
-              fontWeight: FontWeight.bold, color: Colors.orangeAccent),),
+              fontWeight: FontWeight.bold, color: Colors.orangeAccent),
+        ),
         actions: [
           IconButton(
             icon: Image.asset('images/archibat/facebook@4x.png'),
-            onPressed: () async {_launchURL("https://www.facebook.com/Archibat-578022135543253/");},
+            onPressed: () async {
+              _launchURL("https://www.facebook.com/Archibat-578022135543253/");
+            },
           ),
           IconButton(
             icon: Image.asset('images/archibat/insta@4x.png'),
-            onPressed: () async {_launchURL("https://https://instagram.com/archibat_CIV/");},
+            onPressed: () async {
+              _launchURL("https://instagram.com/archibat_CIV/");
+            },
           ),
           IconButton(
             icon: Image.asset('images/archibat/link@4x.png'),
-            onPressed: () async {_launchURL("https://www.facebook.com/Archibat-578022135543253/");},
+            onPressed: () async {
+              _launchURL(
+                  "https://www.linkedin.com/company/archibat-civ?report%2Esuccess=6vo3TCkCS1-Q3MQSXyAa5EmbyooXt_JHF4gI-SlS5O9Glwt8CaN1ZzdSFMOjqCEC4tgoZJl1pOO90MRDlW9NQp");
+            },
           ),
           IconButton(
             icon: Image.asset('images/archibat/tweeter@4x.png'),
-            onPressed: () async {_launchURL("https://www.linkedin.com/company/archibat-civ?report%2Esuccess=6vo3TCkCS1-Q3MQSXyAa5EmbyooXt_JHF4gI-SlS5O9Glwt8CaN1ZzdSFMOjqCEC4tgoZJl1pOO90MRDlW9NQp");},
+            onPressed: () async {
+              _launchURL("https://twitter.com/Archibat_CIV");
+            },
           ),
           // IconButton(
           //   icon: Icon(Icons.headset_mic, color: Colors.orangeAccent),
@@ -106,12 +112,14 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
               children: <Widget>[
                 ClipRRect(
                   borderRadius: BorderRadius.circular(0.0),
-                  child: Image.network("http://cgeciapi.gaddielsoftware.com/archibat.png",
+                  child: Image.network(
+                      "http://cgeciapi.gaddielsoftware.com/archibat.png",
                       fit: BoxFit.cover),
                 ),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(0.0),
-                  child: Image.network("http://cgeciapi.gaddielsoftware.com/Fichier_1number.png",
+                  child: Image.network(
+                      "http://cgeciapi.gaddielsoftware.com/Fichier_1number.png",
                       fit: BoxFit.cover),
                 ),
                 Container(
@@ -160,7 +168,7 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
                                   children: <Widget>[
                                     ClipRRect(
                                       borderRadius:
-                                      BorderRadius.circular(20), //or 15.0
+                                          BorderRadius.circular(20), //or 15.0
                                       child: Container(
                                         padding: EdgeInsets.all(10.0),
                                         height: width * 0.1875,
@@ -192,7 +200,7 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
                                   children: <Widget>[
                                     ClipRRect(
                                       borderRadius:
-                                      BorderRadius.circular(20), //or 15.0
+                                          BorderRadius.circular(20), //or 15.0
                                       child: Container(
                                         padding: EdgeInsets.all(10.0),
                                         height: width * 0.1875,
@@ -224,7 +232,7 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
                                   children: <Widget>[
                                     ClipRRect(
                                       borderRadius:
-                                      BorderRadius.circular(20), //or 15.0
+                                          BorderRadius.circular(20), //or 15.0
                                       child: Container(
                                         padding: EdgeInsets.all(10.0),
                                         height: width * 0.1875,
@@ -266,7 +274,7 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
                               },
                               child: ClipRRect(
                                 borderRadius:
-                                BorderRadius.circular(20), //or 15.0
+                                    BorderRadius.circular(20), //or 15.0
                                 child: Container(
                                   height: 130,
                                   width: 130,
@@ -276,9 +284,9 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
                                       child: Container(
                                         child: Column(
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                              CrossAxisAlignment.center,
                                           mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                              MainAxisAlignment.center,
                                           children: <Widget>[
                                             Center(
                                                 child: Text("Chapiteau A",
@@ -299,7 +307,7 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
                               },
                               child: ClipRRect(
                                 borderRadius:
-                                BorderRadius.circular(20), //or 15.0
+                                    BorderRadius.circular(20), //or 15.0
                                 child: Container(
                                   height: 130,
                                   width: 130,
@@ -309,9 +317,9 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
                                       child: Container(
                                         child: Column(
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                              CrossAxisAlignment.center,
                                           mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                              MainAxisAlignment.center,
                                           children: <Widget>[
                                             Center(
                                                 child: Text(
@@ -339,7 +347,7 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
                               },
                               child: ClipRRect(
                                 borderRadius:
-                                BorderRadius.circular(20), //or 15.0
+                                    BorderRadius.circular(20), //or 15.0
                                 child: Container(
                                   height: 130,
                                   width: 130,
@@ -349,9 +357,9 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
                                       child: Container(
                                         child: Column(
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                              CrossAxisAlignment.center,
                                           mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                              MainAxisAlignment.center,
                                           children: <Widget>[
                                             Center(
                                                 child: Text(
@@ -373,7 +381,7 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
                               },
                               child: ClipRRect(
                                 borderRadius:
-                                BorderRadius.circular(20), //or 15.0
+                                    BorderRadius.circular(20), //or 15.0
                                 child: Container(
                                   height: 130,
                                   width: 130,
@@ -383,9 +391,9 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
                                       child: Container(
                                         child: Column(
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                              CrossAxisAlignment.center,
                                           mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                              MainAxisAlignment.center,
                                           children: <Widget>[
                                             Center(
                                                 child: Text(
@@ -403,22 +411,21 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
                             ),
                           ]),
                       SizedBox(height: 25),
-                       ElevatedButton(
-                         style: ElevatedButton.styleFrom(
-                           primary: Colors.orangeAccent,
-                           onPrimary: Colors.white,
-                           shadowColor: Colors.orangeAccent,
-                           elevation: 3,
-                           shape: RoundedRectangleBorder(
-                               borderRadius: BorderRadius.circular(32.0)),
-                           minimumSize: Size(200, 60), //////// HERE
-                         ),
-                         onPressed: () {
-                           ARCHIINVITATIONScreen().launch(context);
-                         },
-                         child: Text(
-                             "RECEVOIR VOTRE INVITATION", style: TextStyle(
-                             fontSize: 20)),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.orangeAccent,
+                          onPrimary: Colors.white,
+                          shadowColor: Colors.orangeAccent,
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(32.0)),
+                          minimumSize: Size(200, 60), //////// HERE
+                        ),
+                        onPressed: () {
+                          ARCHIINVITATIONScreen().launch(context);
+                        },
+                        child: Text("RECEVOIR VOTRE INVITATION",
+                            style: TextStyle(fontSize: 20)),
                       ),
                       SizedBox(height: 25),
                     ],
@@ -433,7 +440,9 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
   }
 
   void _launchURL(String _url) async {
-    if (!await launch(_url)) throw 'Could not launch $_url';
+    try {
+      if (!await launch(_url)) throw 'Could not launch $_url';
+    } catch (error) {}
   }
 
   openwhatsapp() async {
@@ -445,18 +454,17 @@ class ARCHIHomeScreenState extends State<ARCHIHomeScreen> {
       if (await canLaunch(whatappURL_ios)) {
         await launch(whatappURL_ios, forceSafariVC: false);
       } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: new Text("whatsapp no installed")));
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: new Text("whatsapp no installed")));
       }
     } else {
       // android , web
       if (await canLaunch(whatsappURl_android)) {
         await launch(whatsappURl_android);
       } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: new Text("whatsapp no installed")));
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: new Text("whatsapp no installed")));
       }
     }
   }
-
 }
